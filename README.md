@@ -25,6 +25,31 @@ everyone only sees the GA4 properties they already have access to.
 
 ---
 
+## Installing with Claude Code
+
+The fastest path. Open **Claude Code** (or the **Code** tab in the Claude Desktop
+App) and paste:
+
+> Install the MCP server from https://github.com/aline-delmain/delmain-ga4-mcp —
+> `pip install` it and add it to my MCP config as "delmain-ga4".
+
+Claude will clone the repo, install the package, and wire up your MCP client
+config. Then **you** finish the two steps Claude can't do for you (by design,
+since every person authenticates as themselves):
+
+1. Paste the OAuth `client_id` / `client_secret` (from the team vault) into
+   `~/.delmain-ga4-mcp/.env`.
+2. Run `delmain-ga4-mcp-setup` and authorize in the browser with your own
+   Google account.
+
+Restart your MCP client and the GA4 tools show up.
+
+> Note: a plain chat at claude.ai cannot install software, only **Claude Code**
+> or the Desktop **Code** tab can. And the admin setup below must be done once
+> first, otherwise authorization fails with `org_internal` / `SERVICE_DISABLED`.
+
+---
+
 ## One-time setup by an admin (do this once for the whole team)
 
 1. **OAuth client** — in the Google Cloud project that owns the ":Delmain GA4"
