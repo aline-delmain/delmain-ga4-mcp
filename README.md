@@ -168,31 +168,6 @@ Restart the client. You should see the GA4 tools available.
 
 ---
 
-## Optional: the `delmain-ga4` skill (Claude only)
-
-The MCP gives you the raw GA4 access. The optional **skill** in
-[`skills/delmain-ga4/`](skills/delmain-ga4/) adds a neutral playbook on top: how
-to resolve a property, which dimensions/metrics to use for common questions, and
-how to read the numbers honestly (event-count inflation, attribution buckets,
-realtime caveats). It works in Claude Code and the Claude Desktop app (not
-Cursor, which has no skills).
-
-To install it, copy the folder into your skills directory:
-
-```bash
-# global (all projects)
-cp -r skills/delmain-ga4 ~/.claude/skills/
-```
-
-```powershell
-# Windows
-Copy-Item -Recurse skills\delmain-ga4 "$env:USERPROFILE\.claude\skills\"
-```
-
-It needs the MCP connected to do anything; it calls the same tools.
-
----
-
 ## Notes
 
 - **Read-only.** The server only requests `analytics.readonly`; it cannot
