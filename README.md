@@ -85,6 +85,12 @@ powershell -ExecutionPolicy Bypass -File .\install-delmain-ga4-mcp.ps1
 It will ask you to paste the OAuth `client_id` / `client_secret` from the team
 vault. That's the only manual input. Then restart your MCP client.
 
+> **Claude Desktop users:** the script auto-registers only with **Claude Code**
+> (via the `claude` CLI). If you use the Desktop app, the script prints a
+> `"mcpServers"` JSON block with the full executable path. Copy that block into
+> your `claude_desktop_config.json` (Settings → Developer → Edit Config), then
+> restart the app. Same block works for Cursor's `~/.cursor/mcp.json`.
+
 ### Manual install
 
 Requires Python 3.10+.
