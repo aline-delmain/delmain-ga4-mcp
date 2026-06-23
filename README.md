@@ -71,6 +71,22 @@ Restart your MCP client and the GA4 tools show up.
 
 ## Per-user install
 
+### Quick install (Windows, one script)
+
+Download [`install-delmain-ga4-mcp.ps1`](install-delmain-ga4-mcp.ps1) from this
+repo and run it. It finds Python, installs the package, registers the MCP with
+Claude Code using the full executable path (so a missing PATH entry doesn't
+break it), writes your `.env`, and runs the browser authorization:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\install-delmain-ga4-mcp.ps1
+```
+
+It will ask you to paste the OAuth `client_id` / `client_secret` from the team
+vault. That's the only manual input. Then restart your MCP client.
+
+### Manual install
+
 Requires Python 3.10+.
 
 ```bash
